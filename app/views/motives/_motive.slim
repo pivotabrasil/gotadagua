@@ -2,3 +2,4 @@
   = link_to motive do
     .category = motive.tag
     h1 = motive.description
+    p = pluralize(motive.supporters.size, 'Apoiador', 'Apoiadores')

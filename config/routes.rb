@@ -10,5 +10,7 @@ Gotadagua::Application.routes.draw do
 
   root 'motives#index'
 
-  resources :motives, only: [:new, :create, :show]
+  resources :motives, only: [:new, :create, :show] do
+    resources :supports, only: [:create]
+  end
 end

@@ -15,7 +15,10 @@
             b 329.049
           .info apoiadores desde 23/10/2013
 
-        = link_to 'Eu apoio!', '#', class: 'button block'
+          - if current_user.motives.include? @motive
+            p Eu apoio
+          - else
+            = link_to 'Apoiar', motive_supports_path(@motive), class: 'button block', method: :post
   .share
     .share-inner
       = link_to 'Compartilhe esta ideia', '#'

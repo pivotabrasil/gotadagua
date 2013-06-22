@@ -28,7 +28,7 @@ html.no-js lang='#{I18n.locale}'
     / = render 'layouts/old_browser_warning'
     = render 'partials/header'
     = yield
-    / = render 'footer'
+    = render 'footer'
     javascript:
       head.js('//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', '#{javascript_path "vendor"}', '#{javascript_path "application"}')
     / /[if (gte IE 6)&(lte IE 8)]

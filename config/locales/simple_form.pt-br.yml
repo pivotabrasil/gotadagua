@@ -15,6 +15,5 @@ pt-BR:
       defaults:
         password: Senha
         name: Nome
-      article:
-        title: Título
-        summary: Subtítulo
+      motive:
+        description: Descrição

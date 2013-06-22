@@ -11,4 +11,6 @@ Gotadagua::Application.configure do
   config.active_record.migration_error = :page_load
   config.assets.debug = true
   config.action_mailer.default_url_options = { host: ENV['DOMAIN'] }
+  config.assets.digest = true
+
 end

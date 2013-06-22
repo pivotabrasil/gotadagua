@@ -11,6 +11,7 @@ class MotivesController < ApplicationController
 
   def create
     @motive = Motive.new(motive_params)
+    @motive.supporters << current_user
     if @motive.save
       redirect_to @motive
     else

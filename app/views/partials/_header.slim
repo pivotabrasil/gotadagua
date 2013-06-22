@@ -3,14 +3,12 @@ header#header-page
     #logo
       = link_to 'Gotadagua', '/'
 
-    nav.nav-header role='navigation'
+    nav.nav-user role='navigation'
       ul
-        li Sugestões e comentários: contato@gotadagua.org
-
-    - if current_user
-      p = current_user.name
-      p = image_tag current_user.avatar.regular, width: 100, height: 100
-      = link_to 'Sair', destroy_user_session_path
-    - else
-      - unless params[:controller] =~ /session/
-        = link_to 'Entrar com o Facebook', user_omniauth_connect_path(:facebook), class: 'popup button facebook-connect', data: {width: 600, height: 400}
+        - if current_user
+          li.avatar = image_tag current_user.avatar.regular, width: 100, height: 100
+          li.username = current_user.name
+          li.session = link_to 'Sair', destroy_user_session_path
+        - else
+          - unless params[:controller] =~ /session/
+            li = link_to 'Entrar com o Facebook', user_omniauth_connect_path(:facebook), class: 'popup button small facebook-connect', data: {width: 600, height: 400}

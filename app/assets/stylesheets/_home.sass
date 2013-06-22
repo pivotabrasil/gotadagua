@@ -44,6 +44,7 @@
 
 .motive
   @extend %white-box
+
   +span-columns(3 of 12)
   +omega(4n)
 
@@ -51,6 +52,29 @@
     color: $blue
   h1
     font-weight: $light
-    font-size: 22px
+    font-size: 21px
     line-height: 26px
     color: #333
+
+.enviar-causa
+  position: absolute
+  bottom: -20px
+  display: inline-block
+  background: $blue
+  padding: 15px
+  font-size: 16px
+  width: 100%
+  text-align: center
+  color: white
+  text-decoration: none
+  font-weight: bold
+  text-transform: uppercase
+  font-weight: $regular
+  box-shadow: 0 0 0 4px rgba(black, .1)
+  width: 250px
+  left: 50%
+  margin-left: -(250px / 2)
+  text-shadow: 0 -1px 0 rgba(black, .1)
+  &:hover
+    background: lighten($blue, 10%)
+    box-shadow: 0 0 0 4px rgba(black, .2)

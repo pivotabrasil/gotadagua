@@ -1,0 +1,32 @@
+header#header-page
+  background-color: #207345
+  color: white
+  @include row
+
+  #header-page-inner
+    position: relative
+    height: 56px
+
+    #logo
+      +span-columns(2 of 12)
+
+      a
+        display: block
+        width: 271px
+        height: 71px
+        background: url("logo2.png") no-repeat
+        +hide-text
+        margin-left: 40px
+        position: relative
+        margin-bottom: -15px
+
+    nav.nav-header
+      +span-columns(10 of 12)
+      +omega
+      text-align: right
+      padding: 19px 25px 0 0
+      font-weight: $light
+    ul
+      margin: 0
+      padding: 0
+      list-style-type: none

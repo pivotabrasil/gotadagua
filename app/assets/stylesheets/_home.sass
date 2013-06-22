@@ -1,0 +1,37 @@
+#header-home
+  background: url("bg.jpg") no-repeat
+  min-height: 200px
+  +row
+  #header-home-inner
+    +outer-container
+    color: white
+    h1
+      font-size: 35px
+    p
+      font-size: 15px
+      font-weight: $light
+    .motivo, .ajude
+      text-align: center
+      padding-top: 50px
+      .description
+        padding: 0 10% 0 10%
+
+    .motivo
+      +span-columns(5 of 12)
+    .ajuda
+      +span-columns(5 of 12)
+    .conta-gota
+      +span-columns(2 of 12)
+      position: relative
+      height: 254px
+
+      &:before
+        display: block
+        content: ""
+        height: 254px
+        width: 74px
+        background: url("contagotas.png") no-repeat 50% 0
+        position: absolute
+        top: -40px
+        left: 50%
+        margin-left: -(74px / 2)

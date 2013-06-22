@@ -168,9 +168,6 @@ GEM
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
-    select2-rails (3.4.2)
-      sass-rails
-      thor (~> 0.14)
     shoulda-matchers (2.1.0)
       activesupport (>= 3.0.0)
     simple_form (3.0.0.rc)
@@ -254,7 +251,6 @@ DEPENDENCIES
   rspec-rails (~> 2.13.1)
   rufus-scheduler (~> 2.0.19)
   sass-rails (~> 4.0.0.rc2)
-  select2-rails (~> 3.4.2)
   shoulda-matchers (~> 2.1.0)
   simple_form (~> 3.0.0.rc)
   simplecov (~> 0.7.1)

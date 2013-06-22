@@ -1,10 +1,23 @@
-Tag.create!(name: 'Lorem')
-Tag.create!(name: 'Ipsum')
-Tag.create!(name: 'Dolor')
+Tag.destroy_all
+['Ciência e Tecnologia',
+'Defesa do Consumidor',
+'Educação',
+'Saúde e Drogas',
+'Esporte, Lazer e Cultura',
+'Megaeventos',
+'Obras Públicas e infraestrutura',
+'Transparência e Participação',
+'Crianças e adolescentes',
+'Eleições',
+'Indústria, Comércio e Emprego',
+'Meio Ambiente e Direito dos Animais',
+'Administração Pública',
+'Transporte e Trânsito',
+'Direitos Indígenas',
+'Liberdade de Expressão',
+'Igualdade de gêneros',
+'Direitos Humanos',
+'Reforma Política',
+'Segurança Pública'].each {|name| Tag.create!(name: name)}
 
 Motive.destroy_all
-Motive.create!(tag: Tag.all.sample,description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.')
-Motive.create!(tag: Tag.all.sample,description: 'Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur blandit tempus porttitor.')
-Motive.create!(tag: Tag.all.sample,description: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.')
-Motive.create!(tag: Tag.all.sample,description: 'Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.')
-Motive.create!(tag: Tag.all.sample,description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui.')

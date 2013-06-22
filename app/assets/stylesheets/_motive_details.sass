@@ -1,3 +1,30 @@
 #motive
+  background-color: white
   #motive-inner
+    +outer-container
+    padding: 20px 0
+  .motive-details
+    +span-columns(9 of 12)
+    h1
+      font-weight: $regular
+      color: #444
+  .motive-aside
+    +span-columns(3 of 12)
+
+  .supporters
+    text-align: center
+    padding-bottom: 40px
+    .total
+      font-weight: bold
+      font-size: 60px
+
+  .row
+    +row
+
+.share
+  border-top: 1px solid #ddd
+  background-color: white
+  padding: 20px 0
+  +clearfix
+  .share-inner
     +outer-container

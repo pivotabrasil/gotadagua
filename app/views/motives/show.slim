@@ -4,7 +4,18 @@
 #motive
   #motive-inner
     = link_to 'Ver todas as causas', root_path
+    .row
+      .motive-details
+        h1 = @motive.description
+        .category = @motive.tag
 
-    .motive
-      .category = @motive.tag
-      h1 = @motive.description
+      .motive-aside
+        .supporters
+          .total
+            b 329.049
+          .info apoiadores desde 23/10/2013
+
+        = link_to 'Eu apoio!', '#', class: 'button block'
+  .share
+    .share-inner
+      = link_to 'Compartilhe esta ideia', '#'

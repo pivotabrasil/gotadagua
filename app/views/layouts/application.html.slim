@@ -16,11 +16,11 @@ html.no-js lang='#{I18n.locale}'
     / = render 'layouts/facebook_metatags'
     = stylesheet_link_tag 'application', media: 'all'
     / = render 'layouts/analytics_top'
-    / javascript:
-    /   WebFontConfig = {
-    /     google: { families: [ 'Patrick+Hand::latin', 'Gochi+Hand::latin', 'Open+Sans:400italic,400,600,700:latin' ] }
-    /   };
-    / = javascript_include_tag 'head'
+    javascript:
+      WebFontConfig = {
+        google: { families: [ 'Lato:300,400,700,900' ] }
+      };
+    = javascript_include_tag 'head'
     / /[if lt IE 9]
     /   = javascript_include_tag 'html5shiv-printshiv'
 
@@ -29,8 +29,8 @@ html.no-js lang='#{I18n.locale}'
     = render 'partials/header'
     = yield
     / = render 'footer'
-    / javascript:
-    /   head.js('//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', '#{javascript_path "vendor"}', '#{javascript_path "application"}')
+    javascript:
+      head.js('//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', '#{javascript_path "vendor"}', '#{javascript_path "application"}')
     / /[if (gte IE 6)&(lte IE 8)]
     /   = javascript_include_tag 'http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js'
     /   = javascript_include_tag 'selectivizr'

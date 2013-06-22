@@ -4,8 +4,53 @@
 @import bourbon
 @import neat
 
+// Font weights
+$extralight: 200 !default
+$light: 300 !default
+$regular: 400 !default
+$semibold: 500 !default
+$bold: 700 !default
+$extrabold: 900 !default
+
+body
+  font-family: Lato, Helvetica, Arial
+  font-size: 13px
 
 header#header-page
   background-color: #207345
+  color: white
+
   #header-page-inner
+    position: relative
+    height: 56px
+
+    #logo
+      +span-columns(2 of 12)
+      +shift(1)
+
+      a
+        display: block
+        width: 271px
+        height: 71px
+        background: url("logo2.png") no-repeat
+        +hide-text
+        left: 40px
+        top: 0
+
+    nav.nav-header
+      +span-columns(8 of 12)
+      +omega
+      text-align: right
+      padding: 19px 25px 0 0
+      font-weight: $light
+    ul
+      margin: 0
+      padding: 0
+      list-style-type: none
+
+#header-home
+  background: url("bg.jpg") no-repeat
+  min-height: 200px
+  #header-home-inner
     +outer-container
+    background-color: red

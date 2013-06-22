@@ -35,3 +35,22 @@
         top: -40px
         left: 50%
         margin-left: -(74px / 2)
+
+#main-inner
+  +outer-container
+
+.motives
+  padding-top: 40px
+
+.motive
+  @extend %white-box
+  +span-columns(3 of 12)
+  +omega(4n)
+
+  .category
+    color: $blue
+  h1
+    font-weight: $light
+    font-size: 22px
+    line-height: 26px
+    color: #333

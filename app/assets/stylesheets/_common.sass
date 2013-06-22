@@ -25,4 +25,31 @@ body
   a
     text-decoration: none
 
-%reset-button
+// NORMALISE BUTTONS CLASS
+%normalise-button
+  margin: 0
+  padding: 0
+  outline: 0
+  border: none
+  text-decoration: none
+  text-align: center
+  white-space: nowrap
+  cursor: pointer
+  vertical-align: middle
+  font-weight: normal
+  display: inline-block
+
+.button
+  @extend %normalise-button
+  background-color: $blue
+  padding: 15px
+  font-size: 16px
+  text-align: center
+  color: white
+  text-transform: uppercase
+  font-weight: $regular
+  text-shadow: 0 -1px 0 rgba(black, .1)
+  &:hover
+    background: lighten($blue, 10%)
+  &.block
+    width: 100%

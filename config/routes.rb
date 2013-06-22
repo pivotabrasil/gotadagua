@@ -1,3 +1,3 @@
 Gotadagua::Application.routes.draw do
-  root 'home#index'
+  root 'motives#index'
 end

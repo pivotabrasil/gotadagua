@@ -12,6 +12,9 @@ $regular: 400 !default
 $semibold: 500 !default
 $bold: 700 !default
 $extrabold: 900 !default
+$max-width: 1140px
+$column: 60px
+$gutter: 20px
 
 body
   font-family: Lato, Helvetica, Arial
@@ -20,6 +23,7 @@ body
 header#header-page
   background-color: #207345
   color: white
+  @include row
 
   #header-page-inner
     position: relative
@@ -27,7 +31,7 @@ header#header-page
 
     #logo
       +span-columns(2 of 12)
-      +shift(1)
+      // +shift(1)
 
       a
         display: block
@@ -35,11 +39,12 @@ header#header-page
         height: 71px
         background: url("logo2.png") no-repeat
         +hide-text
-        left: 40px
-        top: 0
+        margin-left: 40px
+        position: relative
+        margin-bottom: -15px
 
     nav.nav-header
-      +span-columns(8 of 12)
+      +span-columns(10 of 12)
       +omega
       text-align: right
       padding: 19px 25px 0 0
@@ -52,6 +57,37 @@ header#header-page
 #header-home
   background: url("bg.jpg") no-repeat
   min-height: 200px
+  +row
   #header-home-inner
     +outer-container
-    background-color: red
+    color: white
+    h1
+      font-size: 35px
+    p
+      font-size: 15px
+      font-weight: $light
+    .motivo, .ajude
+      text-align: center
+      padding-top: 50px
+      .description
+        padding: 0 10% 0 10%
+
+    .motivo
+      +span-columns(5 of 12)
+    .ajuda
+      +span-columns(5 of 12)
+    .conta-gota
+      +span-columns(2 of 12)
+      position: relative
+      height: 254px
+
+      &:before
+        display: block
+        content: ""
+        height: 254px
+        width: 74px
+        background: url("contagotas.png") no-repeat 50% 0
+        position: absolute
+        top: -40px
+        left: 50%
+        margin-left: -(74px / 2)

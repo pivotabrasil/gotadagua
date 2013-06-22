@@ -12,7 +12,10 @@ header#header-home
       h1 Ajude a priorizar!
       .description Vote e compartilhe as causas abaixo.
 
+
 #main
   #main-inner
+    p = link_to 'Mais popular', motives_path(order_by: :support)
+    p = link_to 'Mais recente', motives_path(order_by: :newest)
     .motives
       = render @motives

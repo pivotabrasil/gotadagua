@@ -27,6 +27,7 @@ gem 'oily_png',               '~> 1.1.0'
 gem 'bourbon',                '~> 3.1.8'
 gem 'neat',                   '~> 1.3.0'
 gem 'turbolinks',             '~> 1.2.0'
+gem 'selectivizr-rails',      '~> 1.0.1'
 
 group :production do
   gem 'pg'

@@ -1,0 +1,4 @@
+= simple_form_for @motive do |f|
+  = f.input :description
+  = f.association :tag, include_blank: false
+  = f.button :submit, 'Salvar'

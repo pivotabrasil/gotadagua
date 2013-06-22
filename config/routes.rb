@@ -1,3 +1,4 @@
 Gotadagua::Application.routes.draw do
-  root 'home#index'
+  root 'motives#index'
+  resources :motives, only: [:new, :create, :show]
 end

@@ -42,19 +42,20 @@
 .motives
   padding-top: 40px
 
-.motive
-  @extend %white-box
+body.view-home
+  .motive
+    @extend %white-box
 
-  +span-columns(3 of 12)
-  +omega(4n)
+    +span-columns(3 of 12)
+    +omega(4n)
 
-  .category
-    color: $blue
-  h1
-    font-weight: $light
-    font-size: 21px
-    line-height: 26px
-    color: #333
+    .category
+      color: $blue
+    h1
+      font-weight: $light
+      font-size: 21px
+      line-height: 26px
+      color: #333
 
 .enviar-causa
   position: absolute

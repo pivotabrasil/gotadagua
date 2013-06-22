@@ -23,13 +23,6 @@ html.no-js lang='#{I18n.locale}'
 
   body class='type-app #{@page_class} #{@item_menu}'
     = render 'partials/header'
-    - if current_user
-      p = current_user.name
-      p = image_tag current_user.avatar.regular, width: 100, height: 100
-      = link_to 'Sair', destroy_user_session_path
-    - else
-      - unless params[:controller] =~ /session/
-        = link_to 'Entrar com o Facebook', user_omniauth_connect_path(:facebook), class: 'popup button facebook-connect', data: {width: 600, height: 400}
     = yield
     = render 'partials/footer'
     javascript:

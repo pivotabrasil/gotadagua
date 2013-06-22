@@ -1,3 +1,10 @@
-= render @motive
+- @title = "Bem-vindo!"
+- @page_class= "view-cause-details type-app"
 
-= link_to 'Causas', root_path
+#motive
+  #motive-inner
+    = link_to 'Ver todas as causas', root_path
+
+    .motive
+      .category = @motive.tag
+      h1 = @motive.description

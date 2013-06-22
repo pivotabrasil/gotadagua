@@ -1,4 +1,4 @@
 = simple_form_for @motive do |f|
   = f.input :description
-  = f.association :tag, include_blank: false
+  = f.association :tag, include_blank: false, input_html:{'data-component' => 'select2', multiple: true}
   = f.button :submit, 'Salvar'

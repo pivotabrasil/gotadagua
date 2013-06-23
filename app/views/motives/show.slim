@@ -15,18 +15,19 @@
           .total
             b = @motive.supports.size
           .info apoiadores desde 23/10/2013
-
-          - if current_user.motives.include? @motive
-            p Eu apoio
-          - else
-            = link_to 'Apoiar', motive_supports_path(@motive), class: 'button block', method: :post
-.share
-  .share-inner
-    .div id ="fb-root"
-    = link_to 'Compartilhe esta ideia', '#', :class => "fb_share"
-    = facebook_share_once :link => root_url + motive_path(@motive),
-      :name => "Minha causa no gota d'água",
-      :description => truncate(@motive.description, :length => 100)
+          - if user_signed_in?
+            - if current_user.motives.include? @motive
+              p Eu apoio
+            - else
+              = link_to 'Apoiar', motive_supports_path(@motive), class: 'button block', method: :post
+- if user_signed_in?
+  .share
+    .share-inner
+      .div id ="fb-root"
+      = link_to 'Compartilhe esta ideia', '#', :class => "fb_share"
+      = facebook_share_once :link => root_url + motive_path(@motive),
+        :name => "Minha causa no gota d'água",
+        :description => truncate(@motive.description, :length => 100)
 
 
       

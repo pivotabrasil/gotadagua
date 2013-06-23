@@ -1,5 +1,6 @@
 - @title = "Bem-vindo!"
 - @page_class= "view-cause-details type-app"
+= javascript_include_tag "jquery"
 
 #motive
   #motive-inner
@@ -19,6 +20,13 @@
             p Eu apoio
           - else
             = link_to 'Apoiar', motive_supports_path(@motive), class: 'button block', method: :post
-  .share
-    .share-inner
-      = link_to 'Compartilhe esta ideia', '#'
+.share
+  .share-inner
+    .div id ="fb-root"
+    = link_to 'Compartilhe esta ideia', '#', :class => "fb_share"
+    = facebook_share_once :link => root_url + motive_path(@motive),
+      :name => "Minha causa no gota d'água",
+      :description => truncate(@motive.description, :length => 100)
+
+
+      

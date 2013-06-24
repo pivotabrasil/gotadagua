@@ -14,7 +14,7 @@
         .supporters
           .total
             b = @motive.supports.size
-          .info apoiadores desde 23/10/2013
+          .info #{@motive.supports.size == 1 ? 'apoiador' : 'apoiadores'} desde #{l(@motive.created_at.to_date)}
           - if user_signed_in?
             - if current_user.motives.include? @motive
               p Eu apoio
@@ -30,4 +30,4 @@
         :description => truncate(@motive.description, :length => 100)
 
 
-      
+

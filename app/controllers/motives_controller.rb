@@ -1,8 +1,9 @@
 class MotivesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_motives, only: [:index, :create]
 
   def index
-    @motives = Motive.all
+    @motive = Motive.new
 
     if params[:order_by]
       @motives = @motives.send("order_by_#{params[:order_by]}")
@@ -22,7 +23,7 @@ class MotivesController < ApplicationController
     if @motive.save
       redirect_to @motive
     else
-      render 'new'
+      render 'index'
     end
   end
 
@@ -31,7 +32,13 @@ class MotivesController < ApplicationController
   end
 
   private
+    def set_motives
+      @motives = Motive.all
+    end
+
     def motive_params
-      params.require(:motive).permit(:description, :tag_id)
+      result = params.require(:motive).permit(:description, tag_id: [])
+      result[:tag_id] = result[:tag_id].last
+      result
     end
 end

@@ -18,17 +18,17 @@ gem 'carrierwave-processing', '~> 0.0.2'
 gem 'kaminari',               '~> 0.14.1'
 
 # frontend
-gem 'slim-rails',             '~> 2.0.1'
-gem 'jbuilder',               '~> 1.0.1'
-gem 'sass-rails',             '~> 4.0.0.rc2'
-gem 'uglifier',               '>= 1.3.0'
-gem 'coffee-rails',           '~> 4.0.0'
-gem 'jquery-rails',           '~> 3.0.1'
-gem 'oily_png',               '~> 1.1.0'
-gem 'bourbon',                '~> 3.1.8'
-gem 'neat',                   '~> 1.3.0'
-gem 'selectivizr-rails',      '~> 1.0.1'
-gem "facebook_share",         '~> 0.0.6'
+gem 'slim-rails',        '~> 2.0.1'
+gem 'jbuilder',          '~> 1.0.1'
+gem 'sass-rails',        '~> 4.0.0.rc2'
+gem 'uglifier',          '>= 1.3.0'
+gem 'coffee-rails',      '~> 4.0.0'
+gem 'jquery-rails',      '~> 3.0.1'
+gem 'oily_png',          '~> 1.1.0'
+gem 'bourbon',           '~> 3.1.8'
+gem 'neat',              '~> 1.3.0'
+gem 'selectivizr-rails', '~> 1.0.1'
+gem 'facebook_share',    '~> 0.0.6'
 
 
 group :production do

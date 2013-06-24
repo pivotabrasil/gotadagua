@@ -1,0 +1,78 @@
+#form-new-motive
+  background: $blue
+  position: absolute
+  top: 0
+  +span-columns(12)
+  padding-top: 50px
+  padding-bottom: 50px
+  height: 310px
+  display: none
+
+  .close
+    position: absolute
+    top: 40px
+    right: 40px
+    color: white
+    text-decoration: none
+    font-size: 30px
+    background: tint($blue, 10%)
+    display: inline-block
+    border-radius: 3px
+    padding: 0 10px
+    padding-bottom: 2px
+
+  .close:hover
+    background: shade($blue, 10%)
+
+  .headline
+    margin-bottom: 20px
+    text-align: center
+    color: white
+
+  form
+    .description
+      margin-bottom: 20px
+      +span-columns(6 of 12)
+      +shift(3)
+      textarea
+        font-size: 21px
+        border-radius: 3px
+        border: 0
+        height: 100px
+        padding: 10px
+        width: 100%
+
+    footer
+      +span-columns(6 of 12)
+      +shift(3)
+
+      .tag
+        +span-columns(4 of 6)
+        select
+          display: none
+        .select2-choices
+          border: 0
+          border-radius: 3px
+          padding: 7px 5px
+
+      .submit
+        +span-columns(2 of 6)
+        [type="submit"]
+          float: right
+          border: 0
+          border-radius: 3px
+          background: shade($blue, 30%)
+          color: white
+          text-transform: uppercase
+          padding: 12px 25px
+
+        [type="submit"]:hover
+          background: shade($blue, 40%)
+
+
+    .error
+      color: white
+      display: block
+
+.select2-results .select2-highlighted
+  border-radius: 3px

@@ -7,7 +7,7 @@ header#header-home
       h1 O que te leva às ruas?
       .description Publique aqui os seus R$0,20 para que possamos dar, não uma, mas milhares de respostas aos que não entenderam ainda.
     .conta-gota
-      = link_to 'Enviar uma nova causa', new_motive_path, class: 'button enviar-causa'
+      a.button.enviar-causa data-action="open-form-new-motive" href="#" Enviar uma nova causa
     .ajude
       h1 Ajude a priorizar!
       .description Vote e compartilhe as causas abaixo.
@@ -22,3 +22,16 @@ header#header-home
         li class="#{'active' if params[:order_by] =~ /newest/}" = link_to 'Mais recente', motives_path(order_by: :newest)
     .motives
       = render @motives
+
+#form-new-motive data-component="FormNewMotive"
+  a.close data-action="close" href="#" &times;
+  .headline Seja breve. Quanto mais clara sua ideia, maior a chance de ser apoiado.
+
+  = simple_form_for @motive do |f|
+    .description
+      = f.input :description, label: false
+    footer
+      .tag
+        = f.association :tag, include_blank: false, label: false, input_html: {class: 'select2', multiple: true}
+      .submit
+        = f.button :submit, 'Publicar'

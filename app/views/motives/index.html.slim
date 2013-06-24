@@ -15,7 +15,10 @@ header#header-home
 
 #main
   #main-inner
-    p = link_to 'Mais popular', motives_path(order_by: :support)
-    p = link_to 'Mais recente', motives_path(order_by: :newest)
+    #sorter
+      span Ordenar por:
+      ul
+        li class="#{'active' if params[:order_by].nil? or params[:order_by] =~ /support/}" = link_to 'Mais popular', motives_path(order_by: :support)
+        li class="#{'active' if params[:order_by] =~ /newest/}" = link_to 'Mais recente', motives_path(order_by: :newest)
     .motives
       = render @motives

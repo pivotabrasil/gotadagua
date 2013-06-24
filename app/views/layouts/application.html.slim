@@ -13,22 +13,22 @@ html.no-js lang='#{I18n.locale}'
     meta name='description' content='#{@description}'
     = favicon_link_tag 'favicon.png', type: 'image/x-icon'
     = csrf_meta_tags
-    = render 'partials/facebook_metatags'
+    = render 'layouts/facebook_metatags'
     = stylesheet_link_tag 'application', media: 'all'
-    = render 'partials/analytics_top'
+    = render 'layouts/analytics_top'
     = javascript_include_tag 'close_for_facebook_login'
     javascript:
       WebFontConfig = { google: {families: ['Lato:300,400,700,900']} };
     = javascript_include_tag 'head'
 
   body class='type-app #{@page_class} #{@item_menu}'
-    = render 'partials/header'
+    = render 'layouts/header'
     = yield
-    = render 'partials/footer'
+    = render 'layouts/footer'
     javascript:
       head.js('//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', '#{javascript_path "vendor"}', '#{javascript_path "application"}')
     /[if (gte IE 6)&(lte IE 8)]
       = javascript_include_tag 'http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js'
       = javascript_include_tag 'selectivizr'
-    = render 'partials/development' if Rails.env.development?
-    = render 'partials/analytics_bottom'
+    = render 'layouts/development' if Rails.env.development?
+    = render 'layouts/analytics_bottom'

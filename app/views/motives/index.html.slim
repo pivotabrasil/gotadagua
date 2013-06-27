@@ -4,8 +4,8 @@
 header#header-home
   #header-home-inner
     .motivo
-      h1 O que te leva às ruas?
-      .description Publique aqui os seus R$0,20 para que possamos dar, não uma, mas milhares de respostas aos que não entenderam ainda.
+      h1 O Brasil está nas ruas!
+      .description Os motivos são muitos. E é importante que seja assim.<br> A força deste momento está na pluralidade e na descentralização.
     .conta-gota
       a.button.enviar-causa data-action="open-form-new-motive" href="#" Enviar uma nova causa
     .ajude
@@ -15,11 +15,13 @@ header#header-home
 
 #main
   #main-inner
-    #sorter
+
+    .sorter
       span Ordenar por:
       ul
         li class="#{'active' if params[:order_by].nil? or params[:order_by] =~ /support/}" = link_to 'Mais popular', motives_path(order_by: :support)
         li class="#{'active' if params[:order_by] =~ /newest/}" = link_to 'Mais recente', motives_path(order_by: :newest)
+
     .motives
       = render @motives
 

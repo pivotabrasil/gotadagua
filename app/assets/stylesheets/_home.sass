@@ -1,27 +1,32 @@
 #header-home
-  background: url("bg.jpg") no-repeat
+  background: image-url("bg.jpg") no-repeat
   min-height: 200px
   +row
   #header-home-inner
     +outer-container
     color: white
+    text-shadow: 0 -1px 0 rgba(black, .3)
     h1
       font-size: 35px
-    p
-      font-size: 15px
-      font-weight: $light
+      text-transform: uppercase
     .motivo, .ajude
       text-align: center
-      padding-top: 50px
+      padding-top: 30px
       .description
-        padding: 0 10% 0 10%
+        font-size: 17px
+        line-height: 20px
+        font-weight: $regular
+        padding: 0 5% 0 5%
 
     .motivo
-      +span-columns(5 of 12)
-    .ajuda
-      +span-columns(5 of 12)
+      +span-columns(5)
+      min-height: 254px
+    .ajude
+      +span-columns(5)
+      min-height: 254px
+      +omega
     .conta-gota
-      +span-columns(2 of 12)
+      +span-columns(2)
       position: relative
       height: 254px
 
@@ -30,12 +35,14 @@
         content: ""
         height: 254px
         width: 74px
-        background: url("contagotas.png") no-repeat 50% 0
+        background: image-url("contagotas.png") no-repeat 50% 0
         position: absolute
         top: -40px
         left: 50%
         margin-left: -(74px / 2)
 
+#main
+  padding: 50px 0
 #main-inner
   +outer-container
 
@@ -45,7 +52,8 @@
 body.view-home
   .motive
     @extend %white-box
-
+    min-height: 230px
+    margin-bottom: 27px
     +span-columns(3 of 12)
     +omega(4n)
 
@@ -59,23 +67,22 @@ body.view-home
 
 .enviar-causa
   position: absolute
-  bottom: -20px
+  bottom: -28px
   display: inline-block
   background: $blue
-  padding: 15px
-  font-size: 16px
+  padding: 17px
+  font-size: 18px
   width: 100%
   text-align: center
   color: white
   text-decoration: none
   font-weight: bold
   text-transform: uppercase
-  font-weight: $regular
-  box-shadow: 0 0 0 4px rgba(black, .1)
-  width: 250px
+  font-weight: $bold
+  width: 350px
   left: 50%
-  margin-left: -(250px / 2)
+  margin-left: -(350px / 2)
   text-shadow: 0 -1px 0 rgba(black, .1)
+  border-radius: 3px
   &:hover
     background: lighten($blue, 10%)
-    box-shadow: 0 0 0 4px rgba(black, .2)

@@ -1,0 +1,30 @@
+- if @fb_image
+  meta property='og:image' content="#{ @fb_image }"
+- else
+  meta property='og:image' content="#{ root_url.try(:html_safe) }#{ asset_path('og-facebook.png') }"
+
+- if @fb_url
+  meta property='og:url' content="#{ @fb_url }"
+- else
+  meta property='og:url' content="#{ request.protocol }#{ request.host_with_port }#{ request.fullpath }"
+
+- if @fb_title
+  meta property='og:title' content="#{ @fb_title }"
+- else
+  meta property='og:title' content="#{ @title }"
+
+- if @fb_description
+  meta property='og:description' content="#{ @fb_description }"
+- else
+  - if @description.present?
+    meta property='og:description' content="#{ @description }"
+
+- if @fb_type
+  meta property='og:type' content="#{ @fb_type }"
+- else
+  meta property='og:type' content='website'
+
+meta property="og:site_name" content="Gotadagua.org"
+meta property='og:locale' content="#{ ENV['FACEBOOK_LOCALE'] }"
+meta property='fb:admins' content="#{ ENV['FACEBOOK_ADMINS'] }"
+meta property='fb:app_id' content="#{ ENV['FACEBOOK_KEY'] }"

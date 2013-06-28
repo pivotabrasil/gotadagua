@@ -56,6 +56,8 @@ body.view-home
     margin-bottom: 27px
     +span-columns(3 of 12)
     +omega(4n)
+    &:hover
+      background-color: #fffdf0
 
     .category
       color: $blue
@@ -68,21 +70,26 @@ body.view-home
 .enviar-causa
   position: absolute
   bottom: -28px
-  display: inline-block
-  background: $blue
-  padding: 17px
-  font-size: 18px
   width: 100%
+  width: 350px
+  left: 50%
+  margin-left: -(350px / 2)
+  @extend %button-primary
+
+
+%button-primary
+  text-shadow: 0 -1px 0 rgba(black, .1)
+  border-radius: 3px
   text-align: center
   color: white
   text-decoration: none
   font-weight: bold
   text-transform: uppercase
   font-weight: $bold
-  width: 350px
-  left: 50%
-  margin-left: -(350px / 2)
-  text-shadow: 0 -1px 0 rgba(black, .1)
-  border-radius: 3px
+  display: inline-block
+  background: $blue
+  padding: 17px
+  font-size: 18px
   &:hover
     background: lighten($blue, 10%)
+    color: white

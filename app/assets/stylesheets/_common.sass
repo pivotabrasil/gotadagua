@@ -10,10 +10,22 @@ $column: 60px
 $gutter: 20px
 $blue: #116fc6
 
+$page-footer-height: 80px
+
+html
+  position: relative
+  min-height: 100%
+
 body
+  margin: 0 0 $page-footer-height 0
   background-color: #ededed
   font-family: Lato, Helvetica, Arial
-  font-size: 13px
+  font-size: 14px
+
+a
+  color: $blue
+  &:hover
+    color: darken($blue,15%)
 
 %white-box
   background-color: white
@@ -41,15 +53,7 @@ body
 
 .button
   @extend %normalise-button
-  background-color: $blue
-  padding: 15px
-  font-size: 16px
-  text-align: center
-  color: white
-  font-weight: $regular
-  text-shadow: 0 -1px 0 rgba(black, .1)
-  &:hover
-    background: lighten($blue, 10%)
+  @extend %button-primary
   &.block
     width: 100%
   &.small

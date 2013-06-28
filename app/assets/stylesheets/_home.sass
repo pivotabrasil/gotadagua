@@ -57,6 +57,22 @@ body.view-home
     position: relative
     +span-columns(3 of 12)
     +omega(4n)
+    a
+      display: block
+      +clearfix
+      height: 200px
+    .delete-motive
+      position: absolute
+      top: 15px
+      right: 15px
+      color: red
+      font-size: 11px
+      padding: 5px
+      border-radius: 2px
+      border: 1px solid transparent
+      height: auto
+      &:hover
+        border: 1px solid red
     &:hover
       background-color: #fffdf0
 

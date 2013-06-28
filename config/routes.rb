@@ -10,7 +10,7 @@ Gotadagua::Application.routes.draw do
 
   root 'motives#index'
 
-  resources :motives, only: [:index, :new, :create, :show] do
+  resources :motives, except: [:edit, :update] do
     resources :supports, only: [:create]
   end
 end

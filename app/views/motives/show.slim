@@ -3,12 +3,11 @@
 
 #motive
   #motive-inner
-
     .row
       .view-all-causes
         = link_to 'Ver todas as causas', root_path
       .motive-details
-        h1 = @motive.description
+        h1 = simple_format @motive.description
         .category <span>Categoria:</span> #{@motive.tag}
         - if @motive.creator
           ul.creator
@@ -27,6 +26,11 @@
               .apoiado Eu apoio essa causa
             - else
               = link_to 'Eu apoio!', motive_supports_path(@motive), class: 'button block', method: :post
+
+    .row
+      - if current_user and current_user == @motive.creator
+        p = link_to 'Excluir causa', @motive, method: :delete, class: 'delete-motive'
+
 
 / - if user_signed_in?
 /   .share

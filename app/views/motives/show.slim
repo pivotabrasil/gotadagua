@@ -13,7 +13,9 @@
         - if @motive.creator
           ul.creator
             li.avatar = image_tag @motive.creator.avatar.regular, width: 26, height: 26
-            li.username = truncate @motive.creator.name, length: 20, omission: '', separator: ' '
+            li.username
+              | Enviado por: &nbsp;
+              = truncate @motive.creator.name, length: 20, omission: '', separator: ' '
 
       .motive-aside
         .supporters

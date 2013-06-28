@@ -5,9 +5,11 @@
   #motive-inner
 
     .row
+      .view-all-causes
+        = link_to 'Ver todas as causas', root_path
       .motive-details
         h1 = @motive.description
-        .category = @motive.tag
+        .category <span>Categoria:</span> #{@motive.tag}
         - if @motive.creator
           ul.creator
             li.avatar = image_tag @motive.creator.avatar.regular, width: 26, height: 26
@@ -23,8 +25,6 @@
               .apoiado Eu apoio essa causa
             - else
               = link_to 'Eu apoio!', motive_supports_path(@motive), class: 'button block', method: :post
-    .row
-      = link_to 'Ver todas as causas', root_path
 
 - if user_signed_in?
   .share

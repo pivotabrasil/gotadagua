@@ -1,9 +1,22 @@
+.view-all-causes
+  position: absolute
+  top: 20px
+  left: 0
+  font-weight: $light
+  a
+    color: #999
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+      color: $blue
 #motive
   background-color: white
+  position: relative
 
   #motive-inner
     +outer-container
-    padding: 20px 0
+    position: relative
+    padding: 40px 0
 
   .motive-details
     +span-columns(8 of 12)
@@ -30,7 +43,7 @@
 .share
   border-top: 1px solid #ddd
   background-color: white
-  padding: 20px 0
+  padding: 40px 0
   +clearfix
   .share-inner
     +outer-container

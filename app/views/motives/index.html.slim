@@ -10,7 +10,7 @@ header#header-home
       - if current_user
         a.button.enviar-causa data-action="open-form-new-motive" href="#" Enviar uma nova causa
       - else
-        = link_to 'Enviar uma nova causa', user_omniauth_connect_path(:facebook), class: 'button enviar-causa popup', data: {width: 600, height: 400}
+        = link_to 'Enviar uma nova causa', user_omniauth_connect_path(:facebook), class: 'button enviar-causa popup', data: {width: 600, height: 400, item: 'popup-facebook-connect'}
     .ajude
       h1 Ajude a priorizar!
       .description Vote e compartilhe as causas abaixo.

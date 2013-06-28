@@ -249,3 +249,23 @@ Devise.setup do |config|
   config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'],
   { strategy_class: OmniAuth::Strategies::Facebook, scope: "publish_stream, offline_access, email" }
 end
+
+module OmniAuth
+  module Strategies
+    class Facebook < OAuth2
+
+      MOBILE_USER_AGENTS =  /(webos|ipod|iphone|ipad|mobile|android)/i
+
+      def request_phase
+        options[:display] = mobile_request? ? 'touch' : 'popup'
+        super
+      end
+
+      def mobile_request?
+        ua = Rack::Request.new(@env).user_agent.to_s
+        ua =~ MOBILE_USER_AGENTS
+      end
+
+    end
+  end
+end

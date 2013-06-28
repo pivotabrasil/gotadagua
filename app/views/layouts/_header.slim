@@ -11,4 +11,4 @@ header#header-page
           li.session #{link_to 'Sair', destroy_user_session_path}
         - else
           - unless params[:controller] =~ /session/
-            li = link_to 'Entrar com o Facebook', user_omniauth_connect_path(:facebook), class: 'popup button small facebook-connect', data: {width: 600, height: 400, item: 'popup-facebook-connect'}
+            li.login = link_to 'Entrar com o Facebook', user_omniauth_connect_path(:facebook), class: 'popup button small facebook-connect', data: {width: 600, height: 400, item: 'popup-facebook-connect'}

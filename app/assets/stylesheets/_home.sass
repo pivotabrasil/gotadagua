@@ -42,7 +42,7 @@
         margin-left: -(74px / 2)
 
 #main
-  padding: 50px 0
+  padding: 50px 0 70px 0
 #main-inner
   +outer-container
 
@@ -52,12 +52,23 @@
 body.view-home
   .motive
     @extend %white-box
-    min-height: 230px
+    min-height: 250px
     margin-bottom: 27px
+    position: relative
     +span-columns(3 of 12)
     +omega(4n)
     &:hover
       background-color: #fffdf0
+
+    .apoiadores
+      font-size: 20px
+      color: black
+      border-top: 1px solid #eee
+      position: absolute
+      bottom: 0
+      width: 100%
+      font-weight: $light
+      padding: 15px 0
 
     .category
       color: $blue

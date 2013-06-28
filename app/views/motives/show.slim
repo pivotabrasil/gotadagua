@@ -4,7 +4,7 @@
 
 #motive
   #motive-inner
-    = link_to 'Ver todas as causas', root_path
+
     .row
       .motive-details
         h1 = @motive.description
@@ -19,7 +19,9 @@
             - if current_user.motives.include? @motive
               p Eu apoio
             - else
-              = link_to 'Apoiar', motive_supports_path(@motive), class: 'button block', method: :post
+              = link_to 'Eu apoio!', motive_supports_path(@motive), class: 'button block', method: :post
+    .row
+      = link_to 'Ver todas as causas', root_path
 - if user_signed_in?
   .share
     .share-inner

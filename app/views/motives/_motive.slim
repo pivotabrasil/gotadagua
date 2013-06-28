@@ -2,4 +2,5 @@
   = link_to motive do
     .category = motive.tag
     h1 = truncate motive.description, length: 100
-    p = pluralize(motive.supporters.size, 'Apoiador', 'Apoiadores')
+    .apoiadores
+      = pluralize(motive.supporters.size, 'Apoiador', 'Apoiadores')

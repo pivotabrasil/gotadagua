@@ -6,7 +6,7 @@
 
     .row
       .motive-details
-        h1 = @motive.description
+        h1 = simple_format @motive.description
         .category = @motive.tag
         - if @motive.creator
           ul.creator

@@ -1,6 +1,6 @@
 .motive
   = link_to motive do
     .category = motive.tag
-    h1 = truncate motive.description, length: 100
+    h1 = simple_format truncate(motive.description.lines.first, length: 100, omission: '')
     .apoiadores
       = pluralize(motive.supporters.size, 'Apoiador', 'Apoiadores')

@@ -1,6 +1,5 @@
 - @title = "Bem-vindo!"
 - @page_class= "view-cause-details type-app"
-= javascript_include_tag "jquery"
 
 #motive
   #motive-inner
@@ -9,6 +8,10 @@
       .motive-details
         h1 = @motive.description
         .category = @motive.tag
+        - if @motive.creator
+          ul.creator
+            li.avatar = image_tag @motive.creator.avatar.regular, width: 26, height: 26
+            li.username = truncate @motive.creator.name, length: 20, omission: '', separator: ' '
 
       .motive-aside
         .supporters

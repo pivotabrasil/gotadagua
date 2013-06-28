@@ -18,6 +18,7 @@ class MotivesController < ApplicationController
 
   def create
     @motive = Motive.new(motive_params)
+    @motive.creator = current_user
     @motive.supporters << current_user
 
     if @motive.save

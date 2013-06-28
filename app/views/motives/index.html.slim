@@ -7,7 +7,10 @@ header#header-home
       h1 O Brasil está nas ruas!
       .description Os motivos são muitos. E é importante que seja assim.<br> A força deste momento está na pluralidade e na descentralização.
     .conta-gota
-      a.button.enviar-causa data-action="open-form-new-motive" href="#" Enviar uma nova causa
+      - if current_user
+        a.button.enviar-causa data-action="open-form-new-motive" href="#" Enviar uma nova causa
+      - else
+        = link_to 'Enviar uma nova causa', user_omniauth_connect_path(:facebook), class: 'button enviar-causa popup', data: {width: 600, height: 400}
     .ajude
       h1 Ajude a priorizar!
       .description Vote e compartilhe as causas abaixo.
@@ -15,25 +18,26 @@ header#header-home
 
 #main
   #main-inner
-
-    .sorter
-      span Ordenar por:
-      ul
-        li class="#{'active' if params[:order_by].nil? or params[:order_by] =~ /support/}" = link_to 'Mais popular', motives_path(order_by: :support)
-        li class="#{'active' if params[:order_by] =~ /newest/}" = link_to 'Mais recente', motives_path(order_by: :newest)
+    - if @motives.size > 1
+      .sorter
+        span Ordenar por:
+        ul
+          li class="#{'active' if params[:order_by].nil? or params[:order_by] =~ /support/}" = link_to 'Mais popular', motives_path(order_by: :support)
+          li class="#{'active' if params[:order_by] =~ /newest/}" = link_to 'Mais recente', motives_path(order_by: :newest)
 
     .motives
       = render @motives
 
-#form-new-motive data-component="FormNewMotive"
-  a.close data-action="close" href="#" &times;
-  .headline Seja breve. Quanto mais clara sua ideia, maior a chance de ser apoiado.
+- if current_user
+  #form-new-motive data-component="FormNewMotive"
+    a.close data-action="close" href="#" &times;
+    .headline Seja breve. Quanto mais clara sua ideia, maior a chance de ser apoiado.
 
-  = simple_form_for @motive do |f|
-    .description
-      = f.input :description, label: false
-    footer
-      .tag
-        = f.association :tag, include_blank: false, label: false, input_html: {class: 'select2', multiple: true}
-      .submit
-        = f.button :submit, 'Publicar'
+    = simple_form_for @motive do |f|
+      .description
+        = f.input :description, label: false
+      footer
+        .tag
+          = f.association :tag, include_blank: false, label: false, input_html: {class: 'select2', multiple: true}
+        .submit
+          = f.button :submit, 'Publicar'

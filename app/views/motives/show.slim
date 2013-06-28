@@ -1,6 +1,5 @@
 - @title = "Bem-vindo!"
 - @page_class= "view-cause-details type-app"
-= javascript_include_tag "jquery"
 
 #motive
   #motive-inner
@@ -9,6 +8,10 @@
       .motive-details
         h1 = @motive.description
         .category = @motive.tag
+        - if @motive.creator
+          ul.creator
+            li.avatar = image_tag @motive.creator.avatar.regular, width: 26, height: 26
+            li.username = truncate @motive.creator.name, length: 20, omission: '', separator: ' '
 
       .motive-aside
         .supporters
@@ -17,11 +20,12 @@
           .info #{@motive.supports.size == 1 ? 'apoiador' : 'apoiadores'} desde #{l(@motive.created_at.to_date)}
           - if user_signed_in?
             - if current_user.motives.include? @motive
-              p Eu apoio
+              .apoiado Eu apoio essa causa
             - else
               = link_to 'Eu apoio!', motive_supports_path(@motive), class: 'button block', method: :post
     .row
       = link_to 'Ver todas as causas', root_path
+
 - if user_signed_in?
   .share
     .share-inner
@@ -30,6 +34,14 @@
       = facebook_share_once :link => root_url + motive_path(@motive),
         :name => "Minha causa no gota d'água",
         :description => truncate(@motive.description, :length => 100)
+/ =======
+/               = link_to 'Apoiar', motive_supports_path(@motive), class: 'button block', method: :post
 
-
-
+/ - if user_signed_in?
+/   .share
+/     .share-inner
+/       .div id ="fb-root"
+/       = link_to 'Compartilhe esta ideia', '#', :class => "fb_share"
+/       = facebook_share_once :link => root_url + motive_path(@motive),
+/         :name => "Minha causa no gota d'água",
+/         :description => truncate(@motive.description, :length => 100)

@@ -8,7 +8,7 @@ header#header-page
         - if current_user
           li.avatar = image_tag current_user.avatar.regular, width: 100, height: 100
           li.username = truncate current_user.name, length: 20, omission: '', separator: ' '
-          li.session | #{link_to 'Sair', destroy_user_session_path}
+          li.session #{link_to 'Sair', destroy_user_session_path}
         - else
           - unless params[:controller] =~ /session/
             li = link_to 'Entrar com o Facebook', user_omniauth_connect_path(:facebook), class: 'popup button small facebook-connect', data: {width: 600, height: 400, item: 'popup-facebook-connect'}

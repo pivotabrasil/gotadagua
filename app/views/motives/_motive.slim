@@ -1,5 +1,7 @@
 .motive
   = link_to motive do
+    - if current_user and current_user == motive.creator
+      = link_to 'Excluir', motive, method: :delete
     .category = motive.tag
     h1 = simple_format truncate(motive.description.lines.first, length: 100, omission: '')
     .apoiadores

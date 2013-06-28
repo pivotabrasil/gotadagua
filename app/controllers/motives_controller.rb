@@ -32,6 +32,12 @@ class MotivesController < ApplicationController
     @motive = Motive.find(params[:id])
   end
 
+  def destroy
+    @motive = Motive.find(params[:id])
+    @motive.destroy
+    redirect_to root_url
+  end
+
   private
     def set_motives
       @motives = Motive.all

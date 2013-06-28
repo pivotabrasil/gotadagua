@@ -3,7 +3,6 @@
 
 #motive
   #motive-inner
-
     .row
       .motive-details
         h1 = simple_format @motive.description
@@ -25,23 +24,5 @@
               = link_to 'Eu apoio!', motive_supports_path(@motive), class: 'button block', method: :post
     .row
       = link_to 'Ver todas as causas', root_path
-
-- if user_signed_in?
-  .share
-    .share-inner
-      .div id ="fb-root"
-      = link_to 'Compartilhe esta ideia', '#', :class => "fb_share"
-      = facebook_share_once :link => root_url + motive_path(@motive),
-        :name => "Minha causa no gota d'água",
-        :description => truncate(@motive.description, :length => 100)
-/ =======
-/               = link_to 'Apoiar', motive_supports_path(@motive), class: 'button block', method: :post
-
-/ - if user_signed_in?
-/   .share
-/     .share-inner
-/       .div id ="fb-root"
-/       = link_to 'Compartilhe esta ideia', '#', :class => "fb_share"
-/       = facebook_share_once :link => root_url + motive_path(@motive),
-/         :name => "Minha causa no gota d'água",
-/         :description => truncate(@motive.description, :length => 100)
+      - if current_user and current_user == @motive.creator
+        p = link_to 'Excluir', @motive, method: :delete

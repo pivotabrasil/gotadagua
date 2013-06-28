@@ -16,7 +16,7 @@ module Gotadagua
     config.i18n.default_locale = 'pt-BR'
     config.time_zone = 'Brasilia'
     config.generators.stylesheet_engine = :sass
-    config.assets.precompile += %w(vendor.js head.js)
+    config.assets.precompile += %w(vendor.js head.js close_for_facebook_login.js)
     config.generators do |g|
       g.assets            false
       g.helper            false

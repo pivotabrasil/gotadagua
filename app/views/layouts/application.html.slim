@@ -10,7 +10,10 @@ html.no-js lang='#{I18n.locale}'
       title #{@title} — Gotadagua.org
     - else
       title Gotadagua.org
-    meta name='description' content='#{@description}'
+    - if @description.present?
+      meta name='description' content="#{@description}"
+    - else
+      meta name="description" content="O Brasil está nas ruas! Os motivos são muitos. E é importante que seja assim. A força deste momento está na pluralidade e na descentralização. Ajude a priorizar as causas."
     = favicon_link_tag 'favicon.png', type: 'image/x-icon'
     = csrf_meta_tags
     = render 'layouts/facebook_metatags'
